@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "db": "pscale connect mood dev --port 3309",
+    "prisma": "npx prisma studio",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
