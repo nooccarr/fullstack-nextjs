@@ -1,3 +1,5 @@
+import NewEntryCard from '@/components/NewEntryCard';
+import EntryCard from '@/components/EntryCard';
 import { getUserByClerkID } from '@/utils/auth';
 import { prisma } from '@/utils/db';
 
@@ -20,7 +22,19 @@ const JournalPage = async () => {
   const entries = await getEntries();
   console.log(entries);
 
-  return <div>journal</div>;
+  return (
+    <div className="p-10 bg-zinc-400/10 h-full">
+      <div className="text-3xl mb-8">Journal</div>
+      <div className="grid grid-cols-3 gap-4">
+        <NewEntryCard />
+        {entries.map((entry) => (
+          <EntryCard key={entry.id} entry={entry} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default JournalPage;
+
+// do layout before UI design (layout should come first, and the nthe details should come after it)
