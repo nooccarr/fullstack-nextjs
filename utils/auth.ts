@@ -12,3 +12,5 @@ export const getUserByClerkID = async () => {
 
   return user;
 };
+
+// server-side component: these are Node modules (auth / prisma)
